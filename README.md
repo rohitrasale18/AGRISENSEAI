@@ -88,26 +88,69 @@ Note that, for now it only supports following crops
 - Raspberry
 </details>
 
+## Authentication Features 🔐
+
+### User Authentication
+- **Signup:** Users can create an account with Name, Email, and Password
+- **Login:** Secure login with email and password
+- **Session Management:** Uses Flask-Login for secure session handling
+- **Password Security:** All passwords are hashed using bcrypt
+
+### User Dashboard
+- View all your prediction history:
+  - Crop Recommendations
+  - Fertilizer Suggestions
+  - Disease Detections
+- Track your farming decisions over time
+- Access personalized insights
+
+### Admin Panel 👨‍💼
+- **Admin Credentials:**
+  - Email: `admin@agrisense.com`
+  - Password: `admin123`
+- **Admin Features:**
+  - View all registered users
+  - Monitor system statistics
+  - View detailed user activity and prediction history
+  - Track total predictions across all users
+
+### MongoDB Integration 🍃
+All user data and predictions are securely stored in MongoDB:
+- **Users Collection:** Stores user authentication data
+- **Crop Predictions Collection:** Stores all crop recommendation data
+- **Fertilizer Predictions Collection:** Stores fertilizer suggestion data
+- **Disease Predictions Collection:** Stores disease detection data
+
+**Database Connection:** MongoDB Atlas Cloud Database
+```
+mongodb+srv://rohit:rohit@cluster0.zeovrje.mongodb.net/?appName=Cluster0
+```
+
+### Navigation System
+- **Before Login:** Only Home and About pages are accessible
+- **After Login:** Full access to all features (Crop Recommendation, Fertilizer Advice, Disease Detection, Dashboard)
+- **Admin Access:** Special admin panel for system monitoring
+
 ## How to run locally 🛠️
-- Before the following steps make sure you have [git](https://git-scm.com/download), [Anaconda](https://www.anaconda.com/) or [miniconda](https://docs.conda.io/en/latest/miniconda.html) installed on your system
-- Clone the project repository (original repo: `Harvestify`) with `git clone https://github.com/Gladiator07/Harvestify.git` or you can just download the code and unzip it
-- **Note:** The master branch doesn't have the updated code used for deployment, to download the updated code used for deployment you can use the following command
-  ```
-  ❯ git clone -b deploy https://github.com/Gladiator07/Harvestify.git 
-  ```
-- `deploy` branch has only the code required for deploying the app (rest of the code that was used for training the models, data preparation can be accessed on `master` branch)
-- It is highly recommended to clone the deploy branch for running the project locally (the further steps apply only if you have the deploy branch cloned)
-- Once the project is cloned, open anaconda prompt in the directory where the project was cloned and paste the following block
-  ```
-  conda create -n agrisense python=3.6.12
-  conda activate agrisense
+- Before the following steps make sure you have [git](https://git-scm.com/download), [Python 3.6+](https://www.python.org/downloads/) installed on your system
+- Clone this repository
+- Navigate to the project directory
+- Install required dependencies:
+  ```bash
   pip install -r requirements.txt
   ```
-- And finally run the project with
-  ```
+- Run the application:
+  ```bash
+  cd app
   python app.py
   ```
-- Open the localhost url provided after running `app.py` and now you can use the project locally in your web browser.
+  Or from the root directory:
+  ```bash
+  python run_server.py
+  ```
+- Open your web browser and go to `http://127.0.0.1:5000`
+- **Admin Login:** Use email `admin@agrisense.com` and password `admin123` to access admin panel
+- **Create User Account:** Click on "Sign Up" to create a new user account
 ## DEMO
 
 - ### Crop recommendation system
