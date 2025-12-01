@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<section class="py-5" style="min-height: 70vh; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header bg-success text-white text-center">
+                        <h3 class="font-weight-bold my-2">🌱 Login to AgriSense AI</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                        {{ message }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        
+                        <form method="POST" action="{{ url_for('login') }}">
+                            <div class="form-group mb-3">
+                                <label for="email" class="font-weight-bold">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="password" class="font-weight-bold">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success btn-block btn-lg" data-testid="login-submit-button">
+                                Login
+                            </button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center py-3">
+                        <small>Don't have an account? <a href="{{ url_for('signup') }}" class="text-success font-weight-bold">Sign Up</a></small>
+                    </div>
+                </div>
+                
+                <!-- Admin Credentials Info -->
+                <div class="card shadow-sm border-info mt-3">
+                    <div class="card-body text-center">
+                        <h6 class="text-info">👨‍💼 Admin Login Credentials</h6>
+                        <p class="mb-1"><strong>Email:</strong> admin@agrisense.com</p>
+                        <p class="mb-0"><strong>Password:</strong> admin123</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
