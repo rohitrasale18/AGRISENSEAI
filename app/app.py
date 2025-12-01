@@ -9,11 +9,15 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 import os
+import sys
 import torch
 from torchvision import transforms
 from PIL import Image
 import joblib
 import requests
+
+# Add current directory to path for utils imports
+sys.path.insert(0, os.path.dirname(__file__))
 
 from utils.disease import disease_dic
 from utils.fertilizer import fertilizer_dic
