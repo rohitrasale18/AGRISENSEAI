@@ -1,7 +1,14 @@
 # AgriSense AI 🌿
-#### A simple ML and DL based web application which recommends the best crop to grow, fertilizers to use and detects diseases from plant leaf images.
+#### A ML and DL based web application with user authentication system which recommends the best crop to grow, fertilizers to use and detects diseases from plant leaf images.
 
-#### This project is featured on [Krish Naik's](https://www.youtube.com/channel/UCNU_lfiiWBdtULKOw6X0Dig) YouTube Channel => Check it out [here](https://www.youtube.com/watch?v=zJcSod-L-Ps)
+#### **NEW FEATURES:**
+- ✅ User Authentication (Login/Signup with MongoDB)
+- ✅ User Dashboard with Prediction History
+- ✅ Admin Panel to manage users and monitor all activities
+- ✅ All predictions stored in MongoDB database
+- ✅ Secure password hashing with bcrypt
+
+#### Original project featured on [Krish Naik's](https://www.youtube.com/channel/UCNU_lfiiWBdtULKOw6X0Dig) YouTube Channel => Check it out [here](https://www.youtube.com/watch?v=zJcSod-L-Ps)
 
 ## DISCLAIMER ⚠️
 This is a POC(Proof of concept) kind-of project. The data used here comes up with no guarantee from the creator. So, don't use it for making farming decisions. If you do so, the creator is not responsible for anything. However, this project presents the idea that how we can use ML/DL into precision farming if developed at large scale and with authentic and verified data.
